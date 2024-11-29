@@ -10,6 +10,7 @@ from logger import logger
 if __name__ == "__main__":
 	# Initialisation
 	os.makedirs("Logs", exist_ok=True)
+	logger.info("Running script...")
 	mergedJSON = JSONModificator()
 	
 	# Merging data from defined locations

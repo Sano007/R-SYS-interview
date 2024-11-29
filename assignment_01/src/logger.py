@@ -30,7 +30,6 @@ class ColoredFormatter(logging.Formatter):
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
-
 # Create a file handler
 fileHandler = logging.FileHandler(LOG_PATH)
 fileHandler.setLevel(logging.DEBUG)
@@ -44,5 +43,6 @@ consoleFormatter = ColoredFormatter("[%(levelname)s] %(message)s")
 consoleHandler.setFormatter(consoleFormatter)
 
 # Add handlers to the logger
+logger.handlers.clear()
 logger.addHandler(fileHandler)
 logger.addHandler(consoleHandler)

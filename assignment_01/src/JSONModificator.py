@@ -12,11 +12,28 @@ class JSONModificator:
 	"""
 
 	_completeJSON: dict
+	_duplicitKeys: dict
 	_successRate: dict
 
 	def __init__(self) -> None:
 		self._completeJSON = {}
 		self._successRate = {"Success": 0, "Fail": 0}
+
+	def _getFromURL(self, url: str, modul: str) -> dict:
+		try:
+			result = requests.get(url)
+			if(result.ok):
+				logger.info(f"Request's result for modul {modul}: {result.status_code}")
+			else:
+				logger.warning(f"Request's result for modul {modul}: {result.status_code}")
+				return None
+		except Exception as e:
+			logger.error(e)
+			return None
+		return result.json()
+	
+	def _findDuplicates(self, values: dict) -> None:
+		pass
 
 	def processJSON(self, url: str, modul: str = "main") -> None:
 		"""
@@ -25,21 +42,12 @@ class JSONModificator:
 		:param `url`: The URL to fetch JSON data from.
 		:param `modul`: The module name under which to store the fetched `JSON`. Defaults to `"main"`.
 		"""
-		try:
-			result = requests.get(url)
-			if(result.ok):
-				logger.info(f"Request's result for modul {modul}: {result.status_code}")
-				self._successRate["Success"] += 1
-			else:
-				logger.warning(f"Request's result for modul {modul}: {result.status_code}")
-				self._successRate["Fail"] += 1
-				return
-		except Exception as e:
-			logger.error(e)
+		result = self._getFromURL(url, modul)
+		if(result is None):
 			self._successRate["Fail"] += 1
-			return
-		
-		self._completeJSON[modul] = result.json()
+		else:
+			self._completeJSON[modul] = result
+			self._successRate["Success"] += 1
 
 	def printSuccessRate(self) -> None:
 		"""
