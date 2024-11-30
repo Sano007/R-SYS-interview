@@ -13,10 +13,13 @@ class JSONModificator:
 
 	_completeJSON: dict
 	_duplicitKeys: dict
+	_uniqueKeys: dict
 	_successRate: dict
 
 	def __init__(self) -> None:
 		self._completeJSON = {}
+		self._uniqueKeys = {}
+		self._duplicitKeys = {}
 		self._successRate = {"Success": 0, "Fail": 0}
 
 	def _getFromURL(self, url: str, modul: str) -> dict:
@@ -25,15 +28,24 @@ class JSONModificator:
 			if(result.ok):
 				logger.info(f"Request's result for modul {modul}: {result.status_code}")
 			else:
-				logger.warning(f"Request's result for modul {modul}: {result.status_code}")
+				logger.error(f"Request's result for modul {modul}: {result.status_code}")
 				return None
 		except Exception as e:
-			logger.error(e)
+			logger.critical(e)
 			return None
 		return result.json()
 	
 	def _findDuplicates(self, values: dict) -> None:
-		pass
+		for key, value in values.items():
+			if(not key in self._uniqueKeys):
+				self._uniqueKeys[key] = value
+			elif(not key in self._duplicitKeys):
+				self._duplicitKeys[key] = value
+			elif(isinstance(self._duplicitKeys[key], list)):
+				self._duplicitKeys[key].append(value)
+			else:
+				self._duplicitKeys[key] = [self._duplicitKeys[key], value]
+
 
 	def processJSON(self, url: str, modul: str = "main") -> None:
 		"""
@@ -48,6 +60,10 @@ class JSONModificator:
 		else:
 			self._completeJSON[modul] = result
 			self._successRate["Success"] += 1
+			if(len(result) == 0):
+				logger.warning(f"Modul {modul} is empty!")
+
+			self._findDuplicates(result)
 
 	def printSuccessRate(self) -> None:
 		"""
@@ -69,6 +85,9 @@ class JSONModificator:
 			with open(path, "w") as newJSON:
 				json.dump(self._completeJSON, newJSON, indent="\t")
 			logger.info(f"Successfuly wrote JSON into '{path}'")
+			with open("Output/duplicit-keys.json", "w") as newJSON:
+				json.dump(self._duplicitKeys, newJSON, indent="\t")
+
 		except Exception as e:
 			logger.error(e)
 			raise e
