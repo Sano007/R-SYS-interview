@@ -71,22 +71,23 @@ class JSONModificator:
 		"""
 		logger.info(f"Success: {self._successRate["Success"]}, Fails: {self._successRate["Fail"]}")
 
-	def saveToFile(self, path=JSON_MERGED_PATH) -> None:
+	def saveToFile(self, pathMerged: str = JSON_MERGED_PATH, pathDuplicit: str = JSON_DUPLICIT_PATH) -> None:
 		"""
 		Saves the processed JSON data to a specified file, creating necessary directories if they don’t exist.
 
 		:param `path`: The file path where the JSON should be saved. Defaults to `JSON_MERGED_PATH`.
 		"""
-		directory = os.path.dirname(path)
+		directory = os.path.dirname(pathMerged)
 		try:
 			if directory:
 				os.makedirs(directory, exist_ok=True)
 	
-			with open(path, "w") as newJSON:
+			with open(pathMerged, "w") as newJSON:
 				json.dump(self._completeJSON, newJSON, indent="\t")
-			logger.info(f"Successfuly wrote JSON into '{path}'")
-			with open("Output/duplicit-keys.json", "w") as newJSON:
+			logger.info(f"Successfuly wrote JSON into '{pathMerged}'")
+			with open(pathDuplicit, "w") as newJSON:
 				json.dump(self._duplicitKeys, newJSON, indent="\t")
+			logger.info(f"Successfuly wrote JSON into '{pathDuplicit}'")
 
 		except Exception as e:
 			logger.error(e)

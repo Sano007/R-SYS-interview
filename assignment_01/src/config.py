@@ -4,6 +4,7 @@
 
 LOG_PATH			= "Logs/assignment01.log"
 JSON_MERGED_PATH	= "Output/merged-localizations.json"
+JSON_DUPLICIT_PATH	= "Output/duplicit-keys.json"
 
 # 
 # Default URLs and moduls
