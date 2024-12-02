@@ -10,6 +10,9 @@ If you are using `conda`, for configuring environment use command below:
 conda env create -f python-conda.yml
 ```
 
-Otherwise install these libraries with `pip`: 
+Otherwise make sure you have installed these libraries with `pip`: 
 
+- `requests`
+- `logging`
+- `json`
 - `requests`
