@@ -58,10 +58,17 @@ class JSONModificator:
 		if(result is None):
 			self._successRate["Fail"] += 1
 		else:
-			self._completeJSON[modul] = result
-			self._successRate["Success"] += 1
 			if(len(result) == 0):
 				logger.warning(f"Modul {modul} is empty!")
+			if(ALLOW_EMPTY_KEYS):
+				self._completeJSON[modul] = result
+				self._successRate["Success"] += 1
+			elif(len(result) > 0):
+				self._completeJSON[modul] = result
+				self._successRate["Success"] += 1
+			else:
+				self._successRate["Fail"] += 1
+
 
 			self._findDuplicates(result)
 

@@ -28,11 +28,17 @@ class ColoredFormatter(logging.Formatter):
 # Create logger
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
+# logging.basicConfig(filename=LOG_PATH,
+#                     format="[%(asctime)s][%(levelname)s] %(message)s",
+#                     datefmt='%Y-%m-%d %H:%M:%S',
+#                     level=logging.DEBUG,
+#                     )
+
 
 # Create a file handler
 fileHandler = logging.FileHandler(LOG_PATH)
-fileHandler.setLevel(logging.DEBUG)
 fileFormatter = logging.Formatter("[%(asctime)s][%(levelname)s] %(message)s", datefmt='%Y-%m-%d %H:%M:%S')
+fileHandler.setLevel(logging.DEBUG)
 fileHandler.setFormatter(fileFormatter)
 
 # Create a console handler
@@ -42,6 +48,6 @@ consoleFormatter = ColoredFormatter("[%(levelname)s] %(message)s")
 consoleHandler.setFormatter(consoleFormatter)
 
 # Add handlers to the logger
-logger.handlers.clear()
+# logger.handlers.clear()
 logger.addHandler(fileHandler)
 logger.addHandler(consoleHandler)

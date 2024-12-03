@@ -19,3 +19,9 @@ MODULS = {"aircraft", "animatedMapDataSource_wcs", "animatedMapLayers", "atfm", 
 		  "meteopib", "meteoViewer", "news", "nmb2bvalidation", "notamMsgsViewer", 
 		  "pams", "pib", "proposeRoute", "refresh", "sunriseSunset", 
 		  "userPoints", "userRegForm", "userSettings"}
+
+# 
+# Miscelanious
+# 
+
+ALLOW_EMPTY_KEYS = False
