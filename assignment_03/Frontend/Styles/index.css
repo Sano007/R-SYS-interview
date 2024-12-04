@@ -1,0 +1,60 @@
+body {
+    font-family: sans-serif;
+    margin: 4rem;
+    background-color: lightsteelblue;
+    align-items:flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+}
+
+h1.title {
+    text-align: center;
+}
+
+div.main {
+    border: 0.05rem solid gray;
+    border-radius: 0.4rem;
+    box-shadow: 0.3rem 0.2rem 0.6rem lightgray;
+    background-color: white;
+    margin-bottom: 4rem;
+    padding: 2rem;
+}
+
+div.input-bar {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+label {
+    text-align: center;
+    /* height: inherit;
+    line-height: inherit;
+    display: inline-block; */
+    align-self: center;
+}
+
+input {
+    padding: 0.4rem;
+    border: 0.1rem solid lightsteelblue;
+    border-radius: 0.2rem;
+}
+
+button {
+    border: 0.05rem solid grey;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    white-space: nowrap;
+}
+
+button:hover {
+    background-color: dimgray;
+    color: floralwhite;
+}
+
+button:active {
+    background-color: darkgray;
+}

@@ -1,0 +1,1 @@
+LOG_PATH = "Logs/website.log"
