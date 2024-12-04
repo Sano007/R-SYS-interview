@@ -26,6 +26,7 @@ dependencies:
   - pip=24.2=py313hca03da5_0
   - pysocks=1.7.1=py313hca03da5_0
   - python=3.13.0=h4862095_100_cp313
+  - python-dotenv=0.21.0=py313hca03da5_0
   - python_abi=3.13=0_cp313
   - readline=8.2=h1a28f6b_0
   - requests=2.32.3=py313hca03da5_1
