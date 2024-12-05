@@ -60,7 +60,7 @@ class JSONModificator:
 				self._duplicitKeys[key] = [self._duplicitKeys[key], value]
 
 
-	def processJSON(self, url: str, modul: str = "main") -> None:
+	def processJSON(self, url: str, modul: str = MAIN_MODUL_NAME) -> None:
 		"""
 		Fetches JSON data from a given URL and stores it in self under **modul name**.
 
@@ -90,6 +90,7 @@ class JSONModificator:
 		Logs the current success and failure rates of the JSON processing operations.
 		"""
 		logger.info(f"Success: {self._successRate["Success"]}, Fails: {self._successRate["Fail"]}")
+		logger.info(f"Total number of duplicates: {len(self._duplicitKeys)}")
 
 	def saveToFile(self, pathMerged: str = JSON_MERGED_PATH, pathDuplicit: str = JSON_DUPLICIT_PATH) -> None:
 		"""

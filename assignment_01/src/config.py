@@ -24,4 +24,5 @@ MODULS = {"aircraft", "animatedMapDataSource_wcs", "animatedMapLayers", "atfm", 
 # Miscelanious
 # 
 
-ALLOW_EMPTY_KEYS = False
+ALLOW_EMPTY_KEYS 	= False
+MAIN_MODUL_NAME 	= "main"
