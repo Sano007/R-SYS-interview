@@ -5,11 +5,11 @@ from config import *
 
 
 LOG_COLORS = {
-    "DEBUG": "\033[36m",    # Cyan
-    "INFO": "\033[32m",     # Green
-    "WARNING": "\033[33m",  # Yellow
-    "ERROR": "\033[31m",    # Red
-    "CRITICAL": "\033[35;1m"  # Bright Magenta
+    "DEBUG": "\033[36m",        # Cyan
+    "INFO": "\033[32m",         # Green
+    "WARNING": "\033[33m",      # Yellow
+    "ERROR": "\033[31m",        # Red
+    "CRITICAL": "\033[35;1m"    # Bright Magenta
 }
 # Ensure Logs directory exists
 os.makedirs("Logs", exist_ok=True)

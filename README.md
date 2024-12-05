@@ -8,6 +8,7 @@ If you are using `conda`, for configuring environment use command below:
 
 ```sh
 conda env create -f python-conda.yml
+conda activate r-sys
 ```
 
 Otherwise make sure you have installed these libraries with `pip`: 
@@ -16,3 +17,5 @@ Otherwise make sure you have installed these libraries with `pip`:
 - `logging`
 - `json`
 - `requests`
+- `flask`
+

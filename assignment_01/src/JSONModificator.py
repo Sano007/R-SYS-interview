@@ -23,6 +23,13 @@ class JSONModificator:
 		self._successRate = {"Success": 0, "Fail": 0}
 
 	def _getFromURL(self, url: str, modul: str) -> dict:
+		"""
+		Function for getting data in JSON format from REST API.
+
+		:param `url`: URL address for request.
+		:param `modul`: Name of the modul for log info.
+		:returns `dict`: json data saved into dictionary if operation success, otherwise `None`. 
+		"""
 		try:
 			result = requests.get(url)
 			if(result.ok):
@@ -36,6 +43,12 @@ class JSONModificator:
 		return result.json()
 	
 	def _findDuplicates(self, values: dict) -> None:
+		"""
+		Finds duplicit keys by saving unique ones into separate dictionary. In case 
+		the key already exists, it is stored also with its value into dictionary with duplicates.
+
+		:param `values`: dictionary with new entry for comparing.
+		"""
 		for key, value in values.items():
 			if(not key in self._uniqueKeys):
 				self._uniqueKeys[key] = value

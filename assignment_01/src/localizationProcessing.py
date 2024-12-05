@@ -8,7 +8,7 @@ from logger import logger
 
 
 if __name__ == "__main__":
-	# Initialisation
+	# Initialization
 	os.makedirs("Logs", exist_ok=True)
 	logger.info("Running script...")
 	mergedJSON = JSONModificator()
@@ -21,4 +21,5 @@ if __name__ == "__main__":
 	try:
 		mergedJSON.saveToFile()
 	except Exception:
+		# In case writing to file is permitted, terminate with exit code 1
 		exit(1)
