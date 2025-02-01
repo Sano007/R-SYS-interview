@@ -1,0 +1,10 @@
+// Static tasks configuration.
+//
+// Example:
+[
+	{
+		"label": "Run Flask",
+		"command": "conda activate r-sys; flask run",
+		"shell": "system"
+	}
+]
