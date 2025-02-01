@@ -49,6 +49,7 @@ input {
 
 button {
   border: 0.05rem solid grey;
+  height: 1.75rem;
   border-radius: 0.4rem;
   cursor: pointer;
   transition: transform 0.2s ease, background-color 0.2s ease;

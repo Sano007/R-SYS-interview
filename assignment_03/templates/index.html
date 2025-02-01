@@ -9,13 +9,16 @@
   <body>
     <div class="main">
       <h1 class="title">Search cites distance</h1>
-      <div class="input-bar">
+      <form method="post" class="input-bar">
         <label for="city-a">From:</label>
-        <input type="text" id="city-a" />
+        <input type="text" name="city-a" />
         <label for="city-b">To:</label>
-        <input type="text" id="city-b" />
+        <input type="text" name="city-b" />
         <button>I'm feeling lucky!</button>
-      </div>
+      </>
     </div>
+    {% if message %}
+    	{{message}}
+    {% endif %}
   </body>
 </html>

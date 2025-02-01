@@ -7,7 +7,7 @@ For running projects in this repository it is required to have installed `minico
 If you are using `conda`, for configuring environment use command below:
 
 ```sh
-conda env create -f python-conda.yml
+conda env create -f r-sys.yml
 conda activate r-sys
 ```
 
