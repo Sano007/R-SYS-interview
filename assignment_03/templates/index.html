@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cities finder</title>
-    <link rel="stylesheet" href="static/index.css" />
-  </head>
-  <body>
-    <div class="main">
-      <h1 class="title">Search cites distance</h1>
-      <form method="post" class="input-bar">
-        <label for="city-a">From:</label>
-        <input type="text" name="city-a" />
-        <label for="city-b">To:</label>
-        <input type="text" name="city-b" />
-        <button>I'm feeling lucky!</button>
-      </>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cities finder</title>
+		<link rel="stylesheet" href="static/index.css" />
+	</head>
+	<body>
+		<div class="main">
+			<h1 class="title">Search cities distance</h1>
+			<form method="post" class="input-bar">
+				<label for="city-a">From:</label>
+				<input type="text" name="city-a" />
+				<label for="city-b">To:</label>
+				<input type="text" name="city-b" />
+				<button>I'm feeling lucky!</button>
+			</form>
+		</div>
+		<div class="results">
+			<div class="main">
+				<h1>City A</h1>
+			</div>
+			<div class="main">
+				<h1>City B</h1>
+			</div>
+		</div>
     {% if message %}
     	{{message}}
     {% endif %}

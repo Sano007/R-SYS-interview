@@ -1,8 +1,8 @@
 body {
   font-family: sans-serif;
   margin: auto;
-  padding: 4rem;
   background-color: lightsteelblue;
+  padding-top: 4rem;
   align-items: center;
   align-content: center;
   display: flex;
@@ -10,18 +10,25 @@ body {
   max-width: 800px;
 }
 
+div {
+  margin-bottom: 1rem;
+}
+
 h1.title {
   text-align: center;
+  margin-bottom: 2rem;
+  margin-top: -2rem;
 }
 
 div.main {
-  align-self: center;
   border: 0.05rem solid gray;
   border-radius: 0.4rem;
   box-shadow: 0.3rem 0.2rem 0.6rem lightgray;
   background-color: white;
-  margin-bottom: 4rem;
   padding: 2rem;
+  flex-direction: column;
+  display:inline-flex;
+  /* flex: 800px; */
 }
 
 div.input-bar {
@@ -31,13 +38,26 @@ div.input-bar {
   margin-top: 1rem;
 }
 
+div.results {
+  display: flex;
+  flex-direction: row;
+  /* align-items: flex-end; */
+  align-content: flex-start;
+  border: 0.05rem solid gray;
+  width: inherit;
+  min-width: inherit;
+  border-radius: 0.4rem;
+  box-shadow: 0.3rem 0.2rem 0.6rem lightgray;
+  background-color: white;
+  padding: 2rem;
+  gap: 2rem;
+  box-flex-group: inherit;
+}
+
 
 
 label {
   text-align: center;
-  /* height: inherit;
-    line-height: inherit;
-    display: inline-block; */
   align-self: center;
 }
 
