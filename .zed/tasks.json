@@ -1,0 +1,10 @@
+// Static tasks configuration.
+//
+// Example:
+[
+	{
+		"label": "Run Flask",
+		"command": "flask run",
+		"shell": "system"
+	}
+]

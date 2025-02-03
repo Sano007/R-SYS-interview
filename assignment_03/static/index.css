@@ -27,7 +27,7 @@ div.main {
   background-color: white;
   padding: 2rem;
   flex-direction: column;
-  display:inline-flex;
+  display: inline-flex;
   /* flex: 800px; */
 }
 
@@ -53,8 +53,6 @@ div.results {
   gap: 2rem;
   box-flex-group: inherit;
 }
-
-
 
 label {
   text-align: center;

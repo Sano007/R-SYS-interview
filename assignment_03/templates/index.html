@@ -17,16 +17,19 @@
 				<button>I'm feeling lucky!</button>
 			</form>
 		</div>
+		{% if city_a %}
 		<div class="results">
+			{% if city_a %}
 			<div class="main">
-				<h1>City A</h1>
+				<h1>{{city_a}}</h1>
 			</div>
+			{% endif %}
+			{% if city_b %}
 			<div class="main">
-				<h1>City B</h1>
+				<h1>{{city_b}}</h1>
 			</div>
+			{% endif %}
 		</div>
-    {% if message %}
-    	{{message}}
-    {% endif %}
-  </body>
+		{% endif %}
+	</body>
 </html>

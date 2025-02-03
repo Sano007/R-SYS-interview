@@ -1,7 +1,7 @@
 import logging
 import os
 
-from config import *
+from Backend.config import LOG_PATH
 
 
 LOG_COLORS = {
